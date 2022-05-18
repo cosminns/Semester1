@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cosmi\\OneDrive\\Desktop\\Semester1\\TopUp1\\TopUp1\\TopUp1.csproj": {}
+    "D:\\UCN\\Projects\\top up 1st semester\\Repo\\Semester1\\TopUp1\\TopUp1\\TopUp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cosmi\\OneDrive\\Desktop\\Semester1\\TopUp1\\TopUp1\\TopUp1.csproj": {
+    "D:\\UCN\\Projects\\top up 1st semester\\Repo\\Semester1\\TopUp1\\TopUp1\\TopUp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cosmi\\OneDrive\\Desktop\\Semester1\\TopUp1\\TopUp1\\TopUp1.csproj",
+        "projectUniqueName": "D:\\UCN\\Projects\\top up 1st semester\\Repo\\Semester1\\TopUp1\\TopUp1\\TopUp1.csproj",
         "projectName": "TopUp1",
-        "projectPath": "C:\\Users\\cosmi\\OneDrive\\Desktop\\Semester1\\TopUp1\\TopUp1\\TopUp1.csproj",
-        "packagesPath": "C:\\Users\\cosmi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cosmi\\OneDrive\\Desktop\\Semester1\\TopUp1\\TopUp1\\obj\\",
+        "projectPath": "D:\\UCN\\Projects\\top up 1st semester\\Repo\\Semester1\\TopUp1\\TopUp1\\TopUp1.csproj",
+        "packagesPath": "C:\\Users\\hobaj\\.nuget\\packages\\",
+        "outputPath": "D:\\UCN\\Projects\\top up 1st semester\\Repo\\Semester1\\TopUp1\\TopUp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cosmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hobaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,12 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.2.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -55,15 +49,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
