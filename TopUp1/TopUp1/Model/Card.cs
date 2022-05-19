@@ -1,13 +1,14 @@
 ﻿using System;
 
+
 public class Card
 {
 	int cardNumber;
-	Image photo;
+	string photo;
 	string expiryDate;
 	int memberSSN;
 
-    public Card(int cardNumber, Image photo, string expiryDate, string memberSSN)
+    public Card(int cardNumber, string photo, string expiryDate, int memberSSN)
     {
         this.cardNumber = cardNumber;
         this.photo = photo;
