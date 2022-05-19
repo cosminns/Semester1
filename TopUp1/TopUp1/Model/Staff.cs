@@ -5,9 +5,9 @@ public class Staff
 	int SSN;
 	int roleID;
 
-    public Staff(int sSN, int roleID)
+    public Staff(int SSN, int roleID)
     {
-        SSN = sSN;
+        this.SSN = SSN;
         this.roleID = roleID;
     }
 }
