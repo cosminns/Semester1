@@ -2,13 +2,8 @@
 
 public class Volume
 {
-	string titleISBN;
-	int volumeNumber;
-	bool borrowed;
-	public Volume(string titleISBN, int volumeNumber, bool borrowed)
-	{
-		this.titleISBN = titleISBN;
-		this.volumeNumber = volumeNumber;
-		this.borrowed = borrowed;
-	}
+	 public string TitleISBN { get; set; }
+	 public int VolumeNumber { get; set; }
+	 public bool Borrowed { get; set; } 
+
 }
