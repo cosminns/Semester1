@@ -2,20 +2,9 @@
 
 public class Person
 {
-	int SSN;
-	string fName;
-	string mInit;
-	string lName;
-	string homeAddress;
-	string birthDate;
+	public int SSN { get; set; }
+    public string Name { get; set; }
+    public string HomeAddress { get; set; }
+    public string BirthDate { get; set; }
 
-    public Person(int sSN, string fName, string mInit, string lName, string homeAddress, string birthDate)
-    {
-        SSN = sSN;
-        this.fName = fName;
-        this.mInit = mInit;
-        this.lName = lName;
-        this.homeAddress = homeAddress;
-        this.birthDate = birthDate;
-    }
 }

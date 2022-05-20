@@ -1,13 +1,7 @@
 ﻿using System;
 
-public class Staff
+public class Staff : Person
 {
-	int SSN;
-	int roleID;
+    public string Role { get; set; }
 
-    public Staff(int SSN, int roleID)
-    {
-        this.SSN = SSN;
-        this.roleID = roleID;
-    }
 }
