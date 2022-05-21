@@ -11,5 +11,5 @@ public class Title
     public string SubjectArea { get; set; }
     public string TitleType { get; set; }
     public string TitleStatus { get; set; }
-    public List<string> Authors { get; set; }
+    public List<string> Authors { get; set; } = new List<string>();
 }
