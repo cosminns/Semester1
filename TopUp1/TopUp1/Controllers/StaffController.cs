@@ -41,8 +41,8 @@ namespace TopUp1.Controllers
                     staff.HomeAddress = (string)rdr["HomeAddress"];
                     staff.BirthDate = ((DateTime)rdr["DoB"]).ToShortDateString();
                     staff.Role = (string)rdr["RoleName"];
-
                 }
+                rdr.Close();
 
                 //create a command to get the phone numbers and add them to the staff
 
@@ -54,6 +54,7 @@ namespace TopUp1.Controllers
                 {
                     staff.PhoneNumbers.Add((string)rdr["PhoneNumber"]);
                 }
+                rdr.Close();
 
                 return staff;
             }

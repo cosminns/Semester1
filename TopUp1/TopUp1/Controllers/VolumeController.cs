@@ -42,6 +42,7 @@ namespace TopUp1.Controllers
                     volume.VolumeNumber = (int)rdr["VolumeNumber"];
                     volume.Borrowed = (bool)rdr["Borrowed"];
                 }
+                rdr.Close();
                 
                 return volume;
             }

@@ -68,6 +68,7 @@ namespace TopUp1.Controllers
                     member.JoinDate = ((DateTime)rdr["JoinDate"]).ToShortDateString();
                     member.IsProfessor = (bool)rdr["IsProfessor"];
                 }
+                rdr.Close();
 
                 //create a command to get the phone numbers and add them to the member
 
@@ -79,6 +80,7 @@ namespace TopUp1.Controllers
                 {
                     member.PhoneNumbers.Add((string)rdr["PhoneNumber"]);
                 }
+                rdr.Close();
 
                 //create a command to get the card and add it to the member
 
@@ -94,6 +96,7 @@ namespace TopUp1.Controllers
                     card.Photo = (string)rdr["Photo"];
                     member.Card = card;
                 }
+                rdr.Close();
 
                 return member;
             }

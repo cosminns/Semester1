@@ -38,6 +38,7 @@ namespace TopUp1.Controllers
                     title.TitleType = (string)rdr["TitleType"];
                     title.TitleStatus = (string)rdr["TitleStatus"];
                 }
+                rdr.Close();
 
                 //create a command to get the authors and add them to the title
 
@@ -49,6 +50,7 @@ namespace TopUp1.Controllers
                 {
                     title.Authors.Add((string)rdr["Name"]);
                 }
+                rdr.Close();
 
                 return title;
             }

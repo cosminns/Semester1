@@ -47,6 +47,7 @@ namespace TopUp1.Controllers
                     borrowBook.Member = memberController.GetMemberById(ssn);
                     borrowBook.Volume = volumeController.GetVolumeById(isbn, volumeNumber);
                 }
+                rdr.Close();
 
                 return borrowBook;
             }
