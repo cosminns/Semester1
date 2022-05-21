@@ -93,7 +93,7 @@ namespace TopUp1.Controllers
                     Card card = new Card();
                     card.CardNumber = (int)rdr["CardNumber"];
                     card.ExpiryDate = ((DateTime)rdr["ExpiryDate"]).ToShortDateString();
-                    card.Photo = (string)rdr["Photo"];
+                    card.Photo = rdr["Photo"].ToString();
                     member.Card = card;
                 }
                 rdr.Close();
