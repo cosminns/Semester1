@@ -39,8 +39,8 @@ namespace TopUp1.Controllers
             return list;
         }*/
         [HttpGet]
-        [Route("api/member/{id}")]
-        public Member GetMemberById(int id)
+        [Route("api/member/{ssn}")]
+        public Member GetMemberById(int ssn)
         {
             using (SqlConnection conn = new SqlConnection("Server=gtlgroup5.database.windows.net; Database=GTL; User Id = gtlgroup5admin; Password=5Pn4HVsMtZwmJYv;"))
             {
@@ -53,8 +53,8 @@ namespace TopUp1.Controllers
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@MemberSSN", id));
-                SqlDataReader rdr = null;
+                cmd.Parameters.Add(new SqlParameter("@MemberSSN", ssn));
+                SqlDataReader rdr;
                 // execute the command
                 rdr = cmd.ExecuteReader();
                 Member member = new Member();
@@ -67,8 +67,34 @@ namespace TopUp1.Controllers
                     member.CampusAddress = (string)rdr["CampusAddress"];
                     member.JoinDate = ((DateTime)rdr["JoinDate"]).ToShortDateString();
                     member.IsProfessor = (bool)rdr["IsProfessor"];
-
                 }
+
+                //create a command to get the phone numbers and add them to the member
+
+                cmd = new SqlCommand("prGetPersonPhoneNumbers", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@SSN", ssn));
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    member.PhoneNumbers.Add((string)rdr["PhoneNumber"]);
+                }
+
+                //create a command to get the card and add it to the member
+
+                cmd = new SqlCommand("prGetMemberCard", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@SSN", ssn));
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Card card = new Card();
+                    card.CardNumber = (int)rdr["CardNumber"];
+                    card.ExpiryDate = (string)rdr["ExpiryDate"];
+                    card.Photo = (string)rdr["Photo"];
+                    member.Card = card;
+                }
+
                 return member;
             }
         }
@@ -99,8 +125,8 @@ namespace TopUp1.Controllers
             }
         }
         [HttpPut]
-        [Route("api/member/{id}")]
-        public bool UpdateMember(int id, string campusAddress, DateTime joinDate, bool isProfessor, string homeAddress)
+        [Route("api/member/{ssn}")]
+        public bool UpdateMember(int ssn, string campusAddress, DateTime joinDate, bool isProfessor, string homeAddress)
         {
             using (SqlConnection conn = new SqlConnection("Server=gtlgroup5.database.windows.net; Database=GTL; User Id = gtlgroup5admin; Password=5Pn4HVsMtZwmJYv;"))
             {
@@ -113,7 +139,7 @@ namespace TopUp1.Controllers
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@MemberSSN", id));
+                cmd.Parameters.Add(new SqlParameter("@MemberSSN", ssn));
                 cmd.Parameters.Add(new SqlParameter("@CampusAddress", campusAddress));
                 cmd.Parameters.Add(new SqlParameter("@JoinDate", joinDate));
                 cmd.Parameters.Add(new SqlParameter("@IsProfessor", isProfessor));
@@ -126,8 +152,8 @@ namespace TopUp1.Controllers
             }
         }
         [HttpDelete]
-        [Route("api/member/{id}")]
-        public bool DeleteMember(int id)
+        [Route("api/member/{ssn}")]
+        public bool DeleteMember(int ssn)
         {
             using (SqlConnection conn = new SqlConnection("Server=gtlgroup5.database.windows.net; Database=GTL; User Id = gtlgroup5admin; Password=5Pn4HVsMtZwmJYv;"))
             {
@@ -140,7 +166,7 @@ namespace TopUp1.Controllers
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@MemberSSN", id));
+                cmd.Parameters.Add(new SqlParameter("@MemberSSN", ssn));
                 if (cmd.ExecuteNonQuery() >= 1)
                 {
                     return true;

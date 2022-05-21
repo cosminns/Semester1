@@ -3,5 +3,4 @@
 public class Staff : Person
 {
     public string Role { get; set; }
-
 }

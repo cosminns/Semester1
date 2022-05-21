@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace TopUp1.Controllers
 {
     public class VolumeController : Controller
     {
+        TitleController titleController = new TitleController();
+
         [Route("api/volume")]
         [HttpGet]
         public List<Volume> GetVolume()
@@ -14,7 +17,7 @@ namespace TopUp1.Controllers
         }
         [HttpGet]
         [Route("api/volume/{titleISBN}/{volumeNumber}")]
-        public Volume GetVolumeById(string titleISBN, int volumeNumber )
+        public Volume GetVolumeById(string titleISBN, int volumeNumber)
         {
             using (SqlConnection conn = new SqlConnection("Server=gtlgroup5.database.windows.net; Database=GTL; User Id = gtlgroup5admin; Password=5Pn4HVsMtZwmJYv;"))
             {
@@ -29,16 +32,17 @@ namespace TopUp1.Controllers
                 // 3. add parameter to command, which will be passed to the stored procedure
                 cmd.Parameters.Add(new SqlParameter("@TitleISBN", titleISBN));
                 cmd.Parameters.Add(new SqlParameter("@VolumeNumber", volumeNumber));
-                SqlDataReader rdr = null;
-                // execute the command
+                SqlDataReader rdr;
+                // execute the commandF
                 rdr = cmd.ExecuteReader();
                 Volume volume = new Volume();
                 while (rdr.Read())
                 {
-                    volume.TitleISBN = (string)rdr["TitleISBN"];
+                    volume.Title = titleController.GetTitleById((string)rdr["TitleISBN"]); 
                     volume.VolumeNumber = (int)rdr["VolumeNumber"];
                     volume.Borrowed = (bool)rdr["Borrowed"];
                 }
+                
                 return volume;
             }
         }
@@ -108,7 +112,7 @@ namespace TopUp1.Controllers
 
                 // 3. add parameter to command, which will be passed to the stored procedure
                 cmd.Parameters.Add(new SqlParameter("@TitleISBN", titleISBN));
-                cmd.Parameters.Add(new SqlParameter("@TitleISBN",  volumeNumber));
+                cmd.Parameters.Add(new SqlParameter("@TitleISBN", volumeNumber));
                 if (cmd.ExecuteNonQuery() >= 1)
                 {
                     return true;
