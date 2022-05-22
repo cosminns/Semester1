@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopUp1", "TopUp1\TopUp1.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopUp1Test", "TopUp1Test\TopUp1Test.csproj", "{2A1E2B43-4870-4979-B512-3AC00CFF89F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopUp1GUI", "TopUp1GUI\TopUp1GUI.csproj", "{98B5219E-6D3C-4420-B7E8-B28F41821701}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{88CA147D-EA1E-4FF9-B924-EEC4FD948CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88CA147D-EA1E-4FF9-B924-EEC4FD948CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88CA147D-EA1E-4FF9-B924-EEC4FD948CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B5219E-6D3C-4420-B7E8-B28F41821701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B5219E-6D3C-4420-B7E8-B28F41821701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B5219E-6D3C-4420-B7E8-B28F41821701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B5219E-6D3C-4420-B7E8-B28F41821701}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2A1E2B43-4870-4979-B512-3AC00CFF89F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2A1E2B43-4870-4979-B512-3AC00CFF89F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A1E2B43-4870-4979-B512-3AC00CFF89F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
