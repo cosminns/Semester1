@@ -1,25 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class Title
 {
-	string ISBN;
-	string titleDesc;
-	string title;
-	string publisher;
-	string publishingDate;
-	string subjectArea;
-	string titleType;
-	string titleStatus;
-
-    public Title(string iSBN, string titleDesc, string title, string publisher, string publishingDate, string subjectArea, string titleType, string titleStatus)
-    {
-        ISBN = iSBN;
-        this.titleDesc = titleDesc;
-        this.title = title;
-        this.publisher = publisher;
-        this.publishingDate = publishingDate;
-        this.subjectArea = subjectArea;
-        this.titleType = titleType;
-        this.titleStatus = titleStatus;
-    }
+    public string ISBN { get; set; } = default!;
+    public string TitleDesc { get; set; } = default!;
+    public string TitleTitle { get; set; } = default!;
+    public string Publisher { get; set; } = default!;
+    public string PublishingDate { get; set; } = default!;
+    public string SubjectArea { get; set; } = default!;
+    public string TitleType { get; set; } = default!;
+    public string TitleStatus { get; set; } = default!;
+    public List<string> Authors { get; set; } = new List<string>();
 }

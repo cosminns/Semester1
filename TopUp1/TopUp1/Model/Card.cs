@@ -3,17 +3,7 @@
 
 public class Card
 {
-	int cardNumber;
-	string photo;
-	string expiryDate;
-	int memberSSN;
-
-    public Card(int cardNumber, string photo, string expiryDate, int memberSSN)
-    {
-        this.cardNumber = cardNumber;
-        this.photo = photo;
-        this.expiryDate = expiryDate;
-        this.memberSSN = memberSSN;
-    }
-
+    public int CardNumber { get; set; }
+    public string Photo { get; set; } = default!;
+    public string ExpiryDate { get; set; } = default!;
 }

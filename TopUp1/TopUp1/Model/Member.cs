@@ -1,17 +1,9 @@
 ﻿using System;
 
-public class Member
+public class Member : Person
 {
-	int SSN;
-	string campusAddress;
-	string joinDate;
-	bool isProfessor;
-
-    public Member(int sSN, string campusAddress, string joinDate, bool isProfessor)
-    {
-        SSN = sSN;
-        this.campusAddress = campusAddress;
-        this.joinDate = joinDate;
-        this.isProfessor = isProfessor;
-    }
+    public string CampusAddress { get; set; } = default!;
+    public string JoinDate { get; set; } = default!;
+    public bool IsProfessor { get; set; }
+    public Card Card { get; set; } = default!;
 }
