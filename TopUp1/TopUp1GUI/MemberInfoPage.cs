@@ -12,6 +12,7 @@ using System.Net;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using TopUp1GUI.Caller;
 
 namespace TopUp1GUI
 {
@@ -19,10 +20,12 @@ namespace TopUp1GUI
     {
         static HttpClient client = new HttpClient();
 
-        public MemberInfoPage(int memberSSN)
+        public   MemberInfoPage(int memberSSN)
         {
             InitializeComponent();
-            Member member = Test();
+            
+            RestSharpCaller restSharpCaller = new RestSharpCaller("https://localhost:7234/api/member/10002354");
+             Member member=restSharpCaller.GetMemberBySSN();
         }
 
         private Member Test()
