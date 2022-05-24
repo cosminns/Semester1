@@ -26,13 +26,13 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateMember(int SSN, string campusAddress, bool isProfessor)
         {
-            var request = new RestRequest("/member/?ssn=" + SSN+"&campusAddress="+campusAddress+ "&isProfessor"+isProfessor, Method.POST);
+            var request = new RestRequest("member/?ssn=" + SSN+"&campusAddress="+campusAddress+ "&isProfessor"+isProfessor, Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
         }
         public bool UpdateMember(int ssn, string campusAddress, DateTime joinDate, bool isProfessor, string homeAddress)
         {
-            var request = new RestRequest("/member/"+ssn+"?campusAddress="+campusAddress+"&joinDate="+joinDate+"isProfessor"+"&homeAddress="+homeAddress, Method.PUT);
+            var request = new RestRequest("member/"+ssn+"?campusAddress="+campusAddress+"&joinDate="+joinDate+"isProfessor"+"&homeAddress="+homeAddress, Method.PUT);
             var response = client.Execute<bool>(request);
             return response.Data;
 
@@ -55,7 +55,7 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateBorrowBook(int memberSSN, string titleISBN, int volumeNumber)
         {
-            var request = new RestRequest("/borrowBook/?memberSSN=" + memberSSN+"&titleISBN="+titleISBN+ "&volumeNumber", Method.POST);
+            var request = new RestRequest("borrowBook/?memberSSN=" + memberSSN+"&titleISBN="+titleISBN+ "&volumeNumber", Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
         }
@@ -63,7 +63,7 @@ namespace TopUp1GUI.Caller
         //Requests for  StaffController
         public Staff GetStaffById(int ssn)
         {
-            var request = new RestRequest("/staff/"+ssn, Method.GET);
+            var request = new RestRequest("staff/"+ssn, Method.GET);
 
             var response = client.Execute<Staff>(request);
 
@@ -72,14 +72,14 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateStaff(int SSN, int roleID)
         {
-            var request = new RestRequest("/staff/?ssn=" + SSN+"&roleID="+roleID, Method.POST);
+            var request = new RestRequest("staff/?ssn=" + SSN+"&roleID="+roleID, Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
 
         }
         public bool UpdateStaff(int ssn, int roleID, string homeAddress)
         {
-            var request = new RestRequest("/staff/"+ssn+"?roleID="+roleID+"&homeAddress="+homeAddress, Method.PUT);
+            var request = new RestRequest("staff/"+ssn+"?roleID="+roleID+"&homeAddress="+homeAddress, Method.PUT);
             var response = client.Execute<bool>(request);
             return response.Data;
 
@@ -94,7 +94,7 @@ namespace TopUp1GUI.Caller
         //Requests for TitleController
         public Title GetTitleById(string isbn)
         {
-            var request = new RestRequest("/title/"+isbn, Method.GET);
+            var request = new RestRequest("title/"+isbn, Method.GET);
 
             var response = client.Execute<Title>(request);
 
@@ -103,14 +103,14 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateTitle(string iSBN, string titleDesc, string title, string publisher, string publishingDate, string subjectArea, string titleType, string titleStatus)
         {
-            var request = new RestRequest("/title/?isbn=" +iSBN+"&titleDesc="+titleDesc+"&publisher"+publisher+"&publishingDate="+publishingDate+"subjectArea"+subjectArea+"titleType"+titleType+"titleStatus"+titleStatus, Method.POST);
+            var request = new RestRequest("title/?isbn=" +iSBN+"&titleDesc="+titleDesc+"&publisher"+publisher+"&publishingDate="+publishingDate+"subjectArea"+subjectArea+"titleType"+titleType+"titleStatus"+titleStatus, Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
 
         }
         public bool UpdateTitle(string isbn, string titleDesc, string title, string publisher, string publishingDate, string subjectArea, string titleType, string titleStatus)
         {
-            var request = new RestRequest("/title/"+isbn+"?titleDesc="+titleDesc+"&publisher"+publisher+"&publishingDate="+publishingDate+"subjectArea"+subjectArea+"titleType"+titleType+"titleStatus"+titleStatus, Method.PUT);
+            var request = new RestRequest("title/"+isbn+"?titleDesc="+titleDesc+"&publisher"+publisher+"&publishingDate="+publishingDate+"subjectArea"+subjectArea+"titleType"+titleType+"titleStatus"+titleStatus, Method.PUT);
             var response = client.Execute<bool>(request);
             return response.Data;
 
@@ -124,7 +124,7 @@ namespace TopUp1GUI.Caller
         //Requests for Volume Controller
         public Volume GetVolumeById(string titleISBN, int volumeNumber)
         {
-            var request = new RestRequest("/volume/"+titleISBN+"/volumeNumber"+volumeNumber, Method.GET);
+            var request = new RestRequest("volume/"+titleISBN+"/volumeNumber"+volumeNumber, Method.GET);
 
             var response = client.Execute<Volume>(request);
 
@@ -133,14 +133,14 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateVolume(string titleISBN, int volumeNumber, byte borrowed)
         {
-            var request = new RestRequest("/volume/?titleISBN=" +titleISBN+"&volumeNumber="+volumeNumber+"&borrowed"+borrowed, Method.POST);
+            var request = new RestRequest("volume/?titleISBN=" +titleISBN+"&volumeNumber="+volumeNumber+"&borrowed"+borrowed, Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
 
         }
         public bool UpdateVolume(string titleISBN, int volumeNumber, byte borrowed)
         {
-            var request = new RestRequest("/volume/"+titleISBN+"?volumeNumber="+volumeNumber+"&borrowed"+borrowed, Method.PUT);
+            var request = new RestRequest("volume/"+titleISBN+"?volumeNumber="+volumeNumber+"&borrowed"+borrowed, Method.PUT);
             var response = client.Execute<bool>(request);
             return response.Data;
 

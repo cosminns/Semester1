@@ -24,33 +24,11 @@ namespace TopUp1GUI
         {
             InitializeComponent();
             
-            RestSharpCaller restSharpCaller = new RestSharpCaller("https://localhost:7234/api/member/10002354");
-             Member member=restSharpCaller.GetMemberBySSN();
+            RestSharpCaller restSharpCaller = new RestSharpCaller("https://localhost:7234/api/");
+             Member member=restSharpCaller.GetMemberBySSN(10002354);
         }
 
-        private Member Test()
-        {
-            using (var client = new HttpClient())
-            {
-                Member member = null;
-                client.BaseAddress = new Uri("https://localhost:7234/api/member/{ssn}");
-                //HTTP GET
-                var responseTask = client.GetAsync("10002354");
-                responseTask.Wait();
-
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
-                {
-
-                    var readTask = result.Content.ReadAsAsync<Member>();
-                    readTask.Wait();
-
-                    member = readTask.Result;
-
-                }
-                return member;
-            }
-        }
+        
 
         private void updateMemberButton_Click(object sender, EventArgs e)
         {
