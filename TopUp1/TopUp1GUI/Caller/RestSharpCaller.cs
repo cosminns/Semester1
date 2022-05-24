@@ -32,7 +32,7 @@ namespace TopUp1GUI.Caller
         }
         public bool UpdateMember(int ssn, string campusAddress, DateTime joinDate, bool isProfessor, string homeAddress)
         {
-            var request = new RestRequest("member/"+ssn+"?campusAddress="+campusAddress+"&joinDate="+joinDate+"isProfessor"+"&homeAddress="+homeAddress, Method.PUT);
+            var request = new RestRequest("member/"+ssn+"?campusAddress="+campusAddress+"&joinDate="+joinDate+"&isProfessor="+isProfessor+"&homeAddress="+homeAddress, Method.PUT);
             var response = client.Execute<bool>(request);
             return response.Data;
 

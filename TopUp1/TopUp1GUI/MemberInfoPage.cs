@@ -18,13 +18,13 @@ namespace TopUp1GUI
 {
     public partial class MemberInfoPage : Form
     {
-        
+        RestSharpCaller restSharpCaller = new RestSharpCaller("https://localhost:7234/api/");
 
         public   MemberInfoPage(int memberSSN)
         {
             InitializeComponent();
             
-            RestSharpCaller restSharpCaller = new RestSharpCaller("https://localhost:7234/api/");
+            
              Member member=restSharpCaller.GetMemberBySSN(memberSSN);
             textBoxSSN.Text = member.SSN.ToString();
             textBoxName.Text = member.Name;
@@ -48,12 +48,13 @@ namespace TopUp1GUI
 
         private void updateMemberButton_Click(object sender, EventArgs e)
         {
+            restSharpCaller.UpdateMember(Int32.Parse(textBoxSSN.Text), textBoxCaddress.Text, DateTime.Parse(textBoxJoinDate.Text), checkBoxIsProfessor.Checked, textBoxHaddress.Text);
 
         }
 
         private void deleteMemberButton_Click(object sender, EventArgs e)
         {
-
+            restSharpCaller.DeleteMember(Int32.Parse(textBoxSSN.Text));
         }
     }
 }
