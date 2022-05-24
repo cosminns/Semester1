@@ -1,13 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Data;
-using System.Data.SqlClient;
+using TopUp1.Facades;
+using TopUp1.DAL;
+using TopUp1.Facades.Interfaces;
 
 namespace TopUp1.Controllers
 {
     public class BorrowBookController : Controller
     {
-        MemberController memberController = new MemberController();
-        VolumeController volumeController = new VolumeController();
+        IBorrowFacade borrowFacade = new BorrowFacade(
+            new BorrowDAO(),
+            new VolumeFacade(
+                new VolumeDAO(),
+                new TitleFacade(new TitleDAO())
+            ),
+            new MemberFacade(new MemberDAO())
+        );
 
         // [Route("api/borrowBook")]
         // [HttpGet]
@@ -21,62 +28,18 @@ namespace TopUp1.Controllers
         [Route("api/borrowBook/{isbn}/{volumeNumber}/{ssn}/{lendDate}")]
         public BorrowBook GetBorrowBookById(string isbn, int volumeNumber, int ssn, DateTime lendDate)
         {
-            using (SqlConnection conn = new SqlConnection("Server=gtlgroup5.database.windows.net; Database=GTL; User Id = gtlgroup5admin; Password=5Pn4HVsMtZwmJYv;"))
-            {
-                conn.Open();
-
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("prGetBorrowInfo", conn);
-
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@TitleISBN", isbn));
-                cmd.Parameters.Add(new SqlParameter("@VolumeNumber", volumeNumber));
-                cmd.Parameters.Add(new SqlParameter("@MemberSSN", ssn));
-                cmd.Parameters.Add(new SqlParameter("@LendDate", lendDate));
-                SqlDataReader rdr;
-                // execute the command
-                rdr = cmd.ExecuteReader();
-                BorrowBook borrowBook = new BorrowBook();
-                while (rdr.Read())
-                {
-                    borrowBook.LendDate = ((DateTime)rdr["LendDate"]).ToShortDateString();
-                    borrowBook.ReturnDate = ((DateTime)rdr["ReturnDate"]).ToShortDateString();
-                    borrowBook.Member = memberController.GetMemberById(ssn);
-                    borrowBook.Volume = volumeController.GetVolumeById(isbn, volumeNumber);
-                }
-                rdr.Close();
-
-                return borrowBook;
-            }
+            return borrowFacade.GetBorrowInfo(ssn, isbn, volumeNumber, lendDate.ToShortDateString());
         }
 
         [HttpPost]
         [Route("api/borrowBook")]
         public bool CreateBorrowBook(int memberSSN, string titleISBN, int volumeNumber)
         {
-            using (SqlConnection conn = new SqlConnection("Server=gtlgroup5.database.windows.net; Database=GTL; User Id = gtlgroup5admin; Password=5Pn4HVsMtZwmJYv;"))
-            {
-                conn.Open();
-
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("prInsertBorrow", conn);
-
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@MemberSSN", memberSSN));
-                cmd.Parameters.Add(new SqlParameter("@TitleISBN", titleISBN));
-                cmd.Parameters.Add(new SqlParameter("@VolumeNumber", volumeNumber));
-                if (cmd.ExecuteNonQuery() >= 1)
-                {
-                    return true;
-                }
-                else return false;
-            }
+            BorrowBook borrowBook = new BorrowBook();
+            borrowBook.Member.SSN = memberSSN;
+            borrowBook.Volume.VolumeNumber = volumeNumber;
+            borrowBook.Volume.Title.ISBN = titleISBN;
+            return borrowFacade.SaveBorrow(borrowBook);
         }
 
         // [HttpPut]

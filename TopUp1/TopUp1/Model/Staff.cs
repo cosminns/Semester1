@@ -2,5 +2,5 @@
 
 public class Staff : Person
 {
-    public string Role { get; set; } = default!;
+    public Role Role { get; set; } = new Role();
 }
