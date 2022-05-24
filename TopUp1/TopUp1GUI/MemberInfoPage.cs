@@ -18,14 +18,30 @@ namespace TopUp1GUI
 {
     public partial class MemberInfoPage : Form
     {
-        static HttpClient client = new HttpClient();
+        
 
         public   MemberInfoPage(int memberSSN)
         {
             InitializeComponent();
             
             RestSharpCaller restSharpCaller = new RestSharpCaller("https://localhost:7234/api/");
-             Member member=restSharpCaller.GetMemberBySSN(10002354);
+             Member member=restSharpCaller.GetMemberBySSN(memberSSN);
+            textBoxSSN.Text = member.SSN.ToString();
+            textBoxName.Text = member.Name;
+            textBoxHaddress.Text = member.HomeAddress;
+            textBoxDoB.Text = member.BirthDate;
+            textBoxCaddress.Text = member.CampusAddress;
+            textBoxJoinDate.Text = member.JoinDate;
+            checkBoxIsProfessor.Checked = member.IsProfessor;
+            textBoxCardNumber.Text=member.Card.CardNumber.ToString();
+            textBoxExpiryDate.Text=member.Card.ExpiryDate.ToString();
+            textBoxPhoto.Text=member.Card.Photo;
+            phoneNumbersListBox.Items.Clear();
+            foreach(string phoneNumber in member.PhoneNumbers)
+            {
+                phoneNumbersListBox.Items.Add(phoneNumber);
+            }
+
         }
 
         

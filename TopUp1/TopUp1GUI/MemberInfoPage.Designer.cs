@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxSSN = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxHaddress = new System.Windows.Forms.TextBox();
+            this.textBoxJoinDate = new System.Windows.Forms.TextBox();
+            this.textBoxCaddress = new System.Windows.Forms.TextBox();
+            this.textBoxDoB = new System.Windows.Forms.TextBox();
+            this.textBoxPhoto = new System.Windows.Forms.TextBox();
+            this.textBoxExpiryDate = new System.Windows.Forms.TextBox();
+            this.textBoxCardNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.phoneNumbersListBox = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxIsProfessor = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,193 +54,205 @@
             this.deleteMemberButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxSSN
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 0;
+            this.textBoxSSN.Location = new System.Drawing.Point(108, 40);
+            this.textBoxSSN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxSSN.Name = "textBoxSSN";
+            this.textBoxSSN.Size = new System.Drawing.Size(110, 23);
+            this.textBoxSSN.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxName
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 1;
+            this.textBoxName.Location = new System.Drawing.Point(108, 76);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(110, 23);
+            this.textBoxName.TabIndex = 1;
             // 
-            // textBox3
+            // textBoxHaddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(124, 149);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 2;
+            this.textBoxHaddress.Location = new System.Drawing.Point(108, 112);
+            this.textBoxHaddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxHaddress.Name = "textBoxHaddress";
+            this.textBoxHaddress.Size = new System.Drawing.Size(110, 23);
+            this.textBoxHaddress.TabIndex = 2;
             // 
-            // textBox4
+            // textBoxJoinDate
             // 
-            this.textBox4.Location = new System.Drawing.Point(124, 294);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 3;
+            this.textBoxJoinDate.Location = new System.Drawing.Point(108, 220);
+            this.textBoxJoinDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxJoinDate.Name = "textBoxJoinDate";
+            this.textBoxJoinDate.Size = new System.Drawing.Size(110, 23);
+            this.textBoxJoinDate.TabIndex = 3;
             // 
-            // textBox5
+            // textBoxCaddress
             // 
-            this.textBox5.Location = new System.Drawing.Point(124, 245);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 4;
+            this.textBoxCaddress.Location = new System.Drawing.Point(108, 184);
+            this.textBoxCaddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxCaddress.Name = "textBoxCaddress";
+            this.textBoxCaddress.Size = new System.Drawing.Size(110, 23);
+            this.textBoxCaddress.TabIndex = 4;
             // 
-            // textBox6
+            // textBoxDoB
             // 
-            this.textBox6.Location = new System.Drawing.Point(124, 196);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 27);
-            this.textBox6.TabIndex = 5;
+            this.textBoxDoB.Location = new System.Drawing.Point(108, 147);
+            this.textBoxDoB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxDoB.Name = "textBoxDoB";
+            this.textBoxDoB.Size = new System.Drawing.Size(110, 23);
+            this.textBoxDoB.TabIndex = 5;
             // 
-            // textBox8
+            // textBoxPhoto
             // 
-            this.textBox8.Location = new System.Drawing.Point(479, 145);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 27);
-            this.textBox8.TabIndex = 7;
+            this.textBoxPhoto.Location = new System.Drawing.Point(419, 109);
+            this.textBoxPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPhoto.Name = "textBoxPhoto";
+            this.textBoxPhoto.Size = new System.Drawing.Size(110, 23);
+            this.textBoxPhoto.TabIndex = 7;
             // 
-            // textBox9
+            // textBoxExpiryDate
             // 
-            this.textBox9.Location = new System.Drawing.Point(479, 98);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(125, 27);
-            this.textBox9.TabIndex = 8;
+            this.textBoxExpiryDate.Location = new System.Drawing.Point(419, 74);
+            this.textBoxExpiryDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxExpiryDate.Name = "textBoxExpiryDate";
+            this.textBoxExpiryDate.Size = new System.Drawing.Size(110, 23);
+            this.textBoxExpiryDate.TabIndex = 8;
             // 
-            // textBox10
+            // textBoxCardNumber
             // 
-            this.textBox10.Location = new System.Drawing.Point(479, 50);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 27);
-            this.textBox10.TabIndex = 9;
+            this.textBoxCardNumber.Location = new System.Drawing.Point(419, 38);
+            this.textBoxCardNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxCardNumber.Name = "textBoxCardNumber";
+            this.textBoxCardNumber.Size = new System.Drawing.Size(110, 23);
+            this.textBoxCardNumber.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 55);
+            this.label1.Location = new System.Drawing.Point(16, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 20);
+            this.label1.Size = new System.Drawing.Size(28, 15);
             this.label1.TabIndex = 10;
             this.label1.Text = "SSN";
             // 
             // phoneNumbersListBox
             // 
             this.phoneNumbersListBox.FormattingEnabled = true;
-            this.phoneNumbersListBox.ItemHeight = 20;
-            this.phoneNumbersListBox.Location = new System.Drawing.Point(479, 199);
+            this.phoneNumbersListBox.ItemHeight = 15;
+            this.phoneNumbersListBox.Location = new System.Drawing.Point(419, 149);
+            this.phoneNumbersListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.phoneNumbersListBox.Name = "phoneNumbersListBox";
-            this.phoneNumbersListBox.Size = new System.Drawing.Size(150, 104);
+            this.phoneNumbersListBox.Size = new System.Drawing.Size(132, 79);
             this.phoneNumbersListBox.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 105);
+            this.label2.Location = new System.Drawing.Point(16, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.Size = new System.Drawing.Size(39, 15);
             this.label2.TabIndex = 12;
             this.label2.Text = "Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-1, 148);
+            this.label3.Location = new System.Drawing.Point(-1, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 20);
+            this.label3.Size = new System.Drawing.Size(85, 15);
             this.label3.TabIndex = 13;
             this.label3.Text = "Home Address";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 199);
+            this.label4.Location = new System.Drawing.Point(16, 149);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 20);
+            this.label4.Size = new System.Drawing.Size(29, 15);
             this.label4.TabIndex = 14;
             this.label4.Text = "DoB";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-1, 248);
+            this.label5.Location = new System.Drawing.Point(-1, 186);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 20);
+            this.label5.Size = new System.Drawing.Size(96, 15);
             this.label5.TabIndex = 15;
             this.label5.Text = "Campus Address";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 293);
+            this.label6.Location = new System.Drawing.Point(10, 220);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 20);
+            this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 16;
             this.label6.Text = "Join Date";
             // 
-            // checkBox1
+            // checkBoxIsProfessor
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Location = new System.Drawing.Point(38, 352);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 24);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Is Professor";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxIsProfessor.AutoSize = true;
+            this.checkBoxIsProfessor.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxIsProfessor.Location = new System.Drawing.Point(33, 264);
+            this.checkBoxIsProfessor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxIsProfessor.Name = "checkBoxIsProfessor";
+            this.checkBoxIsProfessor.Size = new System.Drawing.Size(86, 19);
+            this.checkBoxIsProfessor.TabIndex = 17;
+            this.checkBoxIsProfessor.Text = "Is Professor";
+            this.checkBoxIsProfessor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxIsProfessor.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 352);
+            this.label7.Location = new System.Drawing.Point(16, 264);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 20);
+            this.label7.Size = new System.Drawing.Size(0, 15);
             this.label7.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(359, 203);
+            this.label8.Location = new System.Drawing.Point(314, 152);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 20);
+            this.label8.Size = new System.Drawing.Size(93, 15);
             this.label8.TabIndex = 19;
             this.label8.Text = "Phone Numbers";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(359, 55);
+            this.label9.Location = new System.Drawing.Point(314, 41);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 20);
+            this.label9.Size = new System.Drawing.Size(79, 15);
             this.label9.TabIndex = 20;
             this.label9.Text = "Card Number";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(361, 105);
+            this.label10.Location = new System.Drawing.Point(316, 79);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 20);
+            this.label10.Size = new System.Drawing.Size(66, 15);
             this.label10.TabIndex = 21;
             this.label10.Text = "Expiry Date";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(361, 148);
+            this.label11.Location = new System.Drawing.Point(316, 111);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 20);
+            this.label11.Size = new System.Drawing.Size(39, 15);
             this.label11.TabIndex = 22;
             this.label11.Text = "Photo";
             // 
             // updateMemberButton
             // 
-            this.updateMemberButton.Location = new System.Drawing.Point(503, 359);
+            this.updateMemberButton.Location = new System.Drawing.Point(440, 269);
+            this.updateMemberButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateMemberButton.Name = "updateMemberButton";
-            this.updateMemberButton.Size = new System.Drawing.Size(94, 29);
+            this.updateMemberButton.Size = new System.Drawing.Size(82, 22);
             this.updateMemberButton.TabIndex = 23;
             this.updateMemberButton.Text = "Update";
             this.updateMemberButton.UseVisualStyleBackColor = true;
@@ -248,9 +260,10 @@
             // 
             // deleteMemberButton
             // 
-            this.deleteMemberButton.Location = new System.Drawing.Point(635, 359);
+            this.deleteMemberButton.Location = new System.Drawing.Point(556, 269);
+            this.deleteMemberButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteMemberButton.Name = "deleteMemberButton";
-            this.deleteMemberButton.Size = new System.Drawing.Size(94, 29);
+            this.deleteMemberButton.Size = new System.Drawing.Size(82, 22);
             this.deleteMemberButton.TabIndex = 24;
             this.deleteMemberButton.Text = "Delete";
             this.deleteMemberButton.UseVisualStyleBackColor = true;
@@ -258,9 +271,9 @@
             // 
             // MemberInfoPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.deleteMemberButton);
             this.Controls.Add(this.updateMemberButton);
             this.Controls.Add(this.label11);
@@ -268,7 +281,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxIsProfessor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -276,15 +289,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.phoneNumbersListBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxCardNumber);
+            this.Controls.Add(this.textBoxExpiryDate);
+            this.Controls.Add(this.textBoxPhoto);
+            this.Controls.Add(this.textBoxDoB);
+            this.Controls.Add(this.textBoxCaddress);
+            this.Controls.Add(this.textBoxJoinDate);
+            this.Controls.Add(this.textBoxHaddress);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.textBoxSSN);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MemberInfoPage";
             this.Text = "MemberInfoPage";
             this.ResumeLayout(false);
@@ -294,15 +308,15 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
+        private TextBox textBoxSSN;
+        private TextBox textBoxName;
+        private TextBox textBoxHaddress;
+        private TextBox textBoxJoinDate;
+        private TextBox textBoxCaddress;
+        private TextBox textBoxDoB;
+        private TextBox textBoxPhoto;
+        private TextBox textBoxExpiryDate;
+        private TextBox textBoxCardNumber;
         private Label label1;
         private ListBox phoneNumbersListBox;
         private Label label2;
@@ -310,7 +324,7 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxIsProfessor;
         private Label label7;
         private Label label8;
         private Label label9;
