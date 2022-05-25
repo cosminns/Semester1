@@ -19,7 +19,7 @@ namespace TopUp1Test
         public void GetMemberTest(int ssn, string expectedName)
         {
             mockMemberDAO = new Mock<IDAO<Member>>(MockBehavior.Strict);
-            mockMemberDAO.Setup(x => x.GetById(ssn)).Returns(new Member { Name = expectedName });
+            mockMemberDAO.Setup(x => x.GetById(new Member { SSN = ssn })).Returns(new Member { Name = expectedName });
             systemUnderTest = new MemberFacade(mockMemberDAO.Object);
             var result = systemUnderTest.GetMemberInfo(ssn);
 
