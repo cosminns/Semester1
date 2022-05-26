@@ -81,7 +81,6 @@ namespace TopUp1.DAL
                     staff.HomeAddress = (string)rdr["HomeAddress"];
                     staff.BirthDate = ((DateTime)rdr["DoB"]).ToShortDateString();
                     staff.Role.RoleName = (string)rdr["RoleName"];
-                    staff.Role.RoleID = (int)rdr["Role_ID"];
                 }
                 rdr.Close();
 
