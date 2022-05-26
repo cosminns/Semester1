@@ -56,5 +56,10 @@ namespace TopUp1GUI
         {
             restSharpCaller.DeleteMember(Int32.Parse(textBoxSSN.Text));
         }
+
+        private void textBoxSSN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

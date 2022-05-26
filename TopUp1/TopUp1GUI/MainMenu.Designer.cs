@@ -36,27 +36,31 @@
             // 
             // titleMenuButton
             // 
-            this.titleMenuButton.Location = new System.Drawing.Point(503, 234);
+            this.titleMenuButton.Location = new System.Drawing.Point(440, 176);
+            this.titleMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.titleMenuButton.Name = "titleMenuButton";
-            this.titleMenuButton.Size = new System.Drawing.Size(94, 29);
+            this.titleMenuButton.Size = new System.Drawing.Size(82, 22);
             this.titleMenuButton.TabIndex = 0;
             this.titleMenuButton.Text = "Title Menu";
             this.titleMenuButton.UseVisualStyleBackColor = true;
             // 
             // staffMenuButton
             // 
-            this.staffMenuButton.Location = new System.Drawing.Point(369, 157);
+            this.staffMenuButton.Location = new System.Drawing.Point(323, 118);
+            this.staffMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.staffMenuButton.Name = "staffMenuButton";
-            this.staffMenuButton.Size = new System.Drawing.Size(94, 29);
+            this.staffMenuButton.Size = new System.Drawing.Size(82, 22);
             this.staffMenuButton.TabIndex = 1;
             this.staffMenuButton.Text = "Staff Menu";
             this.staffMenuButton.UseVisualStyleBackColor = true;
+            this.staffMenuButton.Click += new System.EventHandler(this.staffMenuButton_Click);
             // 
             // memberMenuButton
             // 
-            this.memberMenuButton.Location = new System.Drawing.Point(212, 201);
+            this.memberMenuButton.Location = new System.Drawing.Point(186, 151);
+            this.memberMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memberMenuButton.Name = "memberMenuButton";
-            this.memberMenuButton.Size = new System.Drawing.Size(122, 29);
+            this.memberMenuButton.Size = new System.Drawing.Size(107, 22);
             this.memberMenuButton.TabIndex = 2;
             this.memberMenuButton.Text = "Member Menu";
             this.memberMenuButton.UseVisualStyleBackColor = true;
@@ -64,22 +68,24 @@
             // 
             // borrowBookMenu
             // 
-            this.borrowBookMenu.Location = new System.Drawing.Point(82, 145);
+            this.borrowBookMenu.Location = new System.Drawing.Point(72, 109);
+            this.borrowBookMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.borrowBookMenu.Name = "borrowBookMenu";
-            this.borrowBookMenu.Size = new System.Drawing.Size(161, 29);
+            this.borrowBookMenu.Size = new System.Drawing.Size(141, 22);
             this.borrowBookMenu.TabIndex = 3;
             this.borrowBookMenu.Text = "Borrow Book Menu";
             this.borrowBookMenu.UseVisualStyleBackColor = true;
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.borrowBookMenu);
             this.Controls.Add(this.memberMenuButton);
             this.Controls.Add(this.staffMenuButton);
             this.Controls.Add(this.titleMenuButton);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
             this.ResumeLayout(false);

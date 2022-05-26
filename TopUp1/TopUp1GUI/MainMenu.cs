@@ -24,5 +24,13 @@ namespace TopUp1GUI
             memberMenu.Closed += (s, args) => this.Show();
             memberMenu.Show();
         }
+
+        private void staffMenuButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var staffMenu = new StaffMenu();
+            staffMenu.Closed += (s, args) => this.Show();
+            staffMenu.Show();
+        }
     }
 }

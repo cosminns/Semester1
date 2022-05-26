@@ -59,8 +59,10 @@
             this.textBoxSSN.Location = new System.Drawing.Point(108, 40);
             this.textBoxSSN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSSN.Name = "textBoxSSN";
+            this.textBoxSSN.ReadOnly = true;
             this.textBoxSSN.Size = new System.Drawing.Size(110, 23);
             this.textBoxSSN.TabIndex = 0;
+            this.textBoxSSN.TextChanged += new System.EventHandler(this.textBoxSSN_TextChanged);
             // 
             // textBoxName
             // 
