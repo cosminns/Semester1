@@ -58,9 +58,11 @@
             // 
             // memberMenuButton
             // 
+            this.memberMenuButton.AccessibleName = "memberMenuButton";
             this.memberMenuButton.Location = new System.Drawing.Point(186, 151);
             this.memberMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memberMenuButton.Name = "memberMenuButton";
+            this.memberMenuButton.Tag = "memberMenuButton";
             this.memberMenuButton.Size = new System.Drawing.Size(107, 22);
             this.memberMenuButton.TabIndex = 2;
             this.memberMenuButton.Text = "Member Menu";
