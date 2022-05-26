@@ -35,7 +35,7 @@ namespace TopUp1GUI
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            restSharpCaller.UpdateStaff(Int32.Parse(textBoxSSN.Text), Int32.Parse(textBoxRoleID.Text),textBoxHAddress.Text);
+            restSharpCaller.UpdateStaff(Int32.Parse(textBoxSSN.Text), 1,textBoxHAddress.Text);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
