@@ -26,7 +26,7 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateMember(int SSN, string campusAddress, bool isProfessor)
         {
-            var request = new RestRequest("member/?ssn=" + SSN+"&campusAddress="+campusAddress+ "&isProfessor"+isProfessor, Method.POST);
+            var request = new RestRequest("member/?ssn=" + SSN+"&campusAddress="+campusAddress+ "&isProfessor="+isProfessor, Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
         }
@@ -55,7 +55,7 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateBorrowBook(int memberSSN, string titleISBN, int volumeNumber)
         {
-            var request = new RestRequest("borrowBook/?memberSSN=" + memberSSN+"&titleISBN="+titleISBN+ "&volumeNumber", Method.POST);
+            var request = new RestRequest("borrowBook/?memberSSN=" + memberSSN+"&titleISBN="+titleISBN+ "&volumeNumber="+volumeNumber, Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
         }
@@ -103,14 +103,14 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateTitle(string iSBN, string titleDesc, string title, string publisher, string publishingDate, string subjectArea, string titleType, string titleStatus)
         {
-            var request = new RestRequest("title/?isbn=" +iSBN+"&titleDesc="+titleDesc+"&publisher"+publisher+"&publishingDate="+publishingDate+"subjectArea"+subjectArea+"titleType"+titleType+"titleStatus"+titleStatus, Method.POST);
+            var request = new RestRequest("title/?isbn=" +iSBN+"&titleDesc="+titleDesc+"&publisher="+publisher+"&publishingDate="+publishingDate+"&subjectArea="+subjectArea+"&titleType="+titleType+"&titleStatus="+titleStatus, Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
 
         }
         public bool UpdateTitle(string isbn, string titleDesc, string title, string publisher, string publishingDate, string subjectArea, string titleType, string titleStatus)
         {
-            var request = new RestRequest("title/"+isbn+"?titleDesc="+titleDesc+"&publisher"+publisher+"&publishingDate="+publishingDate+"subjectArea"+subjectArea+"titleType"+titleType+"titleStatus"+titleStatus, Method.PUT);
+            var request = new RestRequest("title/"+isbn+"?titleDesc="+titleDesc+"&title="+title+"&publisher="+publisher+"&publishingDate="+publishingDate+"&subjectArea="+subjectArea+"&titleType="+titleType+"&titleStatus="+titleStatus, Method.PUT);
             var response = client.Execute<bool>(request);
             return response.Data;
 
@@ -133,21 +133,21 @@ namespace TopUp1GUI.Caller
         }
         public bool CreateVolume(string titleISBN, int volumeNumber, byte borrowed)
         {
-            var request = new RestRequest("volume/?titleISBN=" +titleISBN+"&volumeNumber="+volumeNumber+"&borrowed"+borrowed, Method.POST);
+            var request = new RestRequest("volume/?titleISBN=" +titleISBN+"&volumeNumber="+volumeNumber+"&borrowed="+borrowed, Method.POST);
             var response = client.Execute<bool>(request);
             return response.Data;
 
         }
         public bool UpdateVolume(string titleISBN, int volumeNumber, byte borrowed)
         {
-            var request = new RestRequest("volume/"+titleISBN+"?volumeNumber="+volumeNumber+"&borrowed"+borrowed, Method.PUT);
+            var request = new RestRequest("volume/"+titleISBN+"?volumeNumber="+volumeNumber+"&borrowed="+borrowed, Method.PUT);
             var response = client.Execute<bool>(request);
             return response.Data;
 
         }
         public bool DeleteVolume(string titleISBN, int volumeNumber)
         {
-            var request = new RestRequest("volume/"+titleISBN+"volumeNumber"+volumeNumber, Method.DELETE);
+            var request = new RestRequest("volume/"+titleISBN+"volumeNumber="+volumeNumber, Method.DELETE);
             var response = client.Execute<bool>(request);
             return response.Data;
         }

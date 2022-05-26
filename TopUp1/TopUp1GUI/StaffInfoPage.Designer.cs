@@ -46,6 +46,7 @@
             // 
             this.textBoxSSN.Location = new System.Drawing.Point(112, 60);
             this.textBoxSSN.Name = "textBoxSSN";
+            this.textBoxSSN.ReadOnly = true;
             this.textBoxSSN.Size = new System.Drawing.Size(100, 23);
             this.textBoxSSN.TabIndex = 0;
             // 

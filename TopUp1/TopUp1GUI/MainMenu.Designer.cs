@@ -43,6 +43,7 @@
             this.titleMenuButton.TabIndex = 0;
             this.titleMenuButton.Text = "Title Menu";
             this.titleMenuButton.UseVisualStyleBackColor = true;
+            this.titleMenuButton.Click += new System.EventHandler(this.titleMenuButton_Click);
             // 
             // staffMenuButton
             // 
