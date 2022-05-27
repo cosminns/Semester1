@@ -40,5 +40,13 @@ namespace TopUp1GUI
             titleMenu.Closed += (s, args) => this.Show();
             titleMenu.Show();
         }
+
+        private void borrowBookMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var borrowMenu = new BorrowMenu();
+            borrowMenu.Closed += (s, args) => this.Show();
+            borrowMenu.Show();
+        }
     }
 }

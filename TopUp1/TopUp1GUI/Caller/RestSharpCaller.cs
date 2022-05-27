@@ -45,13 +45,15 @@ namespace TopUp1GUI.Caller
         }
 
         //Requests for BorrowBookController
-        public BorrowBook GetBorrowBookById(string isbn, int volumeNumber, int ssn, DateTime lendDate)
+        public BorrowBook GetBorrowBookById(string isbn, int volumeNumber, int ssn, string lendDate)
         {
             var request = new RestRequest("borrowBook/"+isbn+"/"+volumeNumber+"/"+ssn+"/"+lendDate, Method.GET);
 
             var response = client.Execute<BorrowBook>(request);
+      
+         
+                return response.Data;
 
-            return response.Data;
         }
         public bool CreateBorrowBook(int memberSSN, string titleISBN, int volumeNumber)
         {

@@ -62,9 +62,9 @@
             this.memberMenuButton.Location = new System.Drawing.Point(186, 151);
             this.memberMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memberMenuButton.Name = "memberMenuButton";
-            this.memberMenuButton.Tag = "memberMenuButton";
             this.memberMenuButton.Size = new System.Drawing.Size(107, 22);
             this.memberMenuButton.TabIndex = 2;
+            this.memberMenuButton.Tag = "memberMenuButton";
             this.memberMenuButton.Text = "Member Menu";
             this.memberMenuButton.UseVisualStyleBackColor = true;
             this.memberMenuButton.Click += new System.EventHandler(this.memberMenuButton_Click);
@@ -78,6 +78,7 @@
             this.borrowBookMenu.TabIndex = 3;
             this.borrowBookMenu.Text = "Borrow Book Menu";
             this.borrowBookMenu.UseVisualStyleBackColor = true;
+            this.borrowBookMenu.Click += new System.EventHandler(this.borrowBookMenu_Click);
             // 
             // MainMenu
             // 
