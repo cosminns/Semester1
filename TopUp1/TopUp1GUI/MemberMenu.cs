@@ -19,6 +19,10 @@ namespace TopUp1GUI
 
         private void createMemberButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            var memberPage = new CreateMemberPage();
+            memberPage.Closed += (s, args) => this.Show();
+            memberPage.Show();
 
         }
 
