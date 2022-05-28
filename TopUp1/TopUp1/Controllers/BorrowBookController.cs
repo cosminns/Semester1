@@ -26,9 +26,9 @@ namespace TopUp1.Controllers
 
         [HttpGet]
         [Route("api/borrowBook/{isbn}/{volumeNumber}/{ssn}/{lendDate}")]
-        public BorrowBook GetBorrowBookById(string isbn, int volumeNumber, int ssn, DateTime lendDate)
+        public BorrowBook GetBorrowBookById(string isbn, int volumeNumber, int ssn, string lendDate)
         {
-            return borrowFacade.GetBorrowInfo(ssn, isbn, volumeNumber, lendDate.ToShortDateString());
+            return borrowFacade.GetBorrowInfo(ssn, isbn, volumeNumber, lendDate);
         }
 
         [HttpPost]
@@ -42,14 +42,12 @@ namespace TopUp1.Controllers
             return borrowFacade.SaveBorrow(borrowBook);
         }
 
-        // [HttpPut]
-        // [Route("api/district/{id}")]
-        // public bool UpdateBorrowBook(int memberSSN, string titleISBN, int volumeNumber, string lendDate, string returnDate)
-        // {
-        //     //Checks for null parameters
-        //     var result=true;
-        //     return result;
-        // }
+        [HttpPut]
+        [Route("api/borrowBook/{isbn}/{volumeNumber}/{ssn}/{lendDate}")]
+        public bool ReturnBorrowBook(string isbn, int volumeNumber, int ssn, string lendDate)
+        {
+            return borrowFacade.ReturnBorrow(ssn, isbn, volumeNumber, lendDate);
+        }
         // [HttpDelete]
         // [Route("api/borrowBook/{id}")]
         // public bool DeleteBorrowBook(int id)

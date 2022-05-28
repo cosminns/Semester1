@@ -36,8 +36,11 @@
             this.labelVolumeNumber = new System.Windows.Forms.Label();
             this.textBoxLandDate = new System.Windows.Forms.TextBox();
             this.labelLendDate = new System.Windows.Forms.Label();
-            this.textBoxReturnDate = new System.Windows.Forms.TextBox();
+            this.textBoxDeadLine = new System.Windows.Forms.TextBox();
+            this.labelDeadLine = new System.Windows.Forms.Label();
             this.labelReturnDate = new System.Windows.Forms.Label();
+            this.textBoxReturnDate = new System.Windows.Forms.TextBox();
+            this.returnButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelMemberSSN
@@ -104,29 +107,59 @@
             this.labelLendDate.TabIndex = 6;
             this.labelLendDate.Text = "Land Date";
             // 
-            // textBoxReturnDate
+            // textBoxDeadLine
             // 
-            this.textBoxReturnDate.Location = new System.Drawing.Point(150, 176);
-            this.textBoxReturnDate.Name = "textBoxReturnDate";
-            this.textBoxReturnDate.Size = new System.Drawing.Size(100, 23);
-            this.textBoxReturnDate.TabIndex = 9;
+            this.textBoxDeadLine.Location = new System.Drawing.Point(150, 176);
+            this.textBoxDeadLine.Name = "textBoxDeadLine";
+            this.textBoxDeadLine.Size = new System.Drawing.Size(100, 23);
+            this.textBoxDeadLine.TabIndex = 9;
+            // 
+            // labelDeadLine
+            // 
+            this.labelDeadLine.AutoSize = true;
+            this.labelDeadLine.Location = new System.Drawing.Point(88, 179);
+            this.labelDeadLine.Name = "labelDeadLine";
+            this.labelDeadLine.Size = new System.Drawing.Size(56, 15);
+            this.labelDeadLine.TabIndex = 8;
+            this.labelDeadLine.Text = "DeadLine";
+            this.labelDeadLine.Click += new System.EventHandler(this.labelReturnDate_Click);
             // 
             // labelReturnDate
             // 
             this.labelReturnDate.AutoSize = true;
-            this.labelReturnDate.Location = new System.Drawing.Point(75, 179);
+            this.labelReturnDate.Location = new System.Drawing.Point(78, 208);
             this.labelReturnDate.Name = "labelReturnDate";
-            this.labelReturnDate.Size = new System.Drawing.Size(69, 15);
-            this.labelReturnDate.TabIndex = 8;
-            this.labelReturnDate.Text = "Return Date";
+            this.labelReturnDate.Size = new System.Drawing.Size(66, 15);
+            this.labelReturnDate.TabIndex = 10;
+            this.labelReturnDate.Text = "ReturnDate";
+            // 
+            // textBoxReturnDate
+            // 
+            this.textBoxReturnDate.Location = new System.Drawing.Point(150, 205);
+            this.textBoxReturnDate.Name = "textBoxReturnDate";
+            this.textBoxReturnDate.Size = new System.Drawing.Size(100, 23);
+            this.textBoxReturnDate.TabIndex = 11;
+            // 
+            // returnButton
+            // 
+            this.returnButton.Location = new System.Drawing.Point(150, 290);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(100, 23);
+            this.returnButton.TabIndex = 12;
+            this.returnButton.Text = "ReturnBook";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // BorrowBooklnfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.returnButton);
             this.Controls.Add(this.textBoxReturnDate);
             this.Controls.Add(this.labelReturnDate);
+            this.Controls.Add(this.textBoxDeadLine);
+            this.Controls.Add(this.labelDeadLine);
             this.Controls.Add(this.textBoxLandDate);
             this.Controls.Add(this.labelLendDate);
             this.Controls.Add(this.textBoxVolumeNumber);
@@ -152,7 +185,10 @@
         private Label labelVolumeNumber;
         private TextBox textBoxLandDate;
         private Label labelLendDate;
-        private TextBox textBoxReturnDate;
+        private TextBox textBoxDeadLine;
+        private Label labelDeadLine;
         private Label labelReturnDate;
+        private TextBox textBoxReturnDate;
+        private Button returnButton;
     }
 }

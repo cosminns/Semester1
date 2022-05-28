@@ -77,9 +77,9 @@ namespace TopUp1.DAL
                     member.SSN = (int)rdr["SSN"];
                     member.Name = (string)rdr["Name"];
                     member.HomeAddress = (string)rdr["HomeAddress"];
-                    member.BirthDate = ((DateTime)rdr["DoB"]).ToShortDateString();
+                    member.BirthDate = ((DateTime)rdr["DoB"]).ToString("yyyy-MM-dd");
                     member.CampusAddress = (string)rdr["CampusAddress"];
-                    member.JoinDate = ((DateTime)rdr["JoinDate"]).ToShortDateString();
+                    member.JoinDate = ((DateTime)rdr["JoinDate"]).ToString("yyyy-MM-dd");
                     member.IsProfessor = (bool)rdr["IsProfessor"];
                 }
                 rdr.Close();
@@ -106,7 +106,8 @@ namespace TopUp1.DAL
                 {
                     Card card = new Card();
                     card.CardNumber = (int)rdr["CardNumber"];
-                    card.ExpiryDate = ((DateTime)rdr["ExpiryDate"]).ToShortDateString();
+                    card.ExpiryDate = ((DateTime)rdr["ExpiryDate"]).ToString("yyyy-MM-dd");
+                    card.ExpiryDate = ((DateTime)rdr["ExpiryDate"]).ToString("yyyy-MM-dd");
                     card.Photo = (string)rdr["Photo"];
                     member.Card = card;
                 }

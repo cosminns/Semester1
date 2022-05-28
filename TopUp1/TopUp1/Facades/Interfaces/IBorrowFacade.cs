@@ -9,5 +9,6 @@ namespace TopUp1.Facades.Interfaces
     {
         public bool SaveBorrow(BorrowBook borrowBook);
         public BorrowBook GetBorrowInfo(int ssn, string isbn, int volumeNumber, string lendDate);
+        public bool ReturnBorrow(int ssn, string isbn, int volumeNumber, string lendDate);
     }
 }

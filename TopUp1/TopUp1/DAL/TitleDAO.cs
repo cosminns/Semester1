@@ -82,7 +82,7 @@ namespace TopUp1.DAL
                     title.TitleDesc = (string)rdr["TitleDesc"];
                     title.TitleTitle = (string)rdr["Title"];
                     title.Publisher = (string)rdr["Publisher"];
-                    title.PublishingDate = ((DateTime)rdr["PublishingDate"]).ToShortDateString();
+                    title.PublishingDate = ((DateTime)rdr["PublishingDate"]).ToString("yyyy-MM-dd");
                     title.SubjectArea = (string)rdr["SubjectArea"];
                     title.TitleType = (string)rdr["TitleType"];
                     title.TitleStatus = (string)rdr["TitleStatus"];

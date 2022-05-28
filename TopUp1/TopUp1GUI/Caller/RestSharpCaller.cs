@@ -62,6 +62,13 @@ namespace TopUp1GUI.Caller
             return response.Data;
         }
 
+        public bool ReturnBorrow(string isbn, int volumeNumber, int ssn, string lendDate) 
+        {
+            var request = new RestRequest("borrowBook/" + isbn + "/" + volumeNumber + "/" + ssn + "/" + lendDate, Method.PUT);
+            var response = client.Execute<bool>(request);
+            return response.Data;
+        }
+
         //Requests for  StaffController
         public Staff GetStaffById(int ssn)
         {

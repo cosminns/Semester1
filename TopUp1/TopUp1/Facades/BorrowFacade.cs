@@ -37,6 +37,22 @@ namespace TopUp1.Facades
             return borrowBook;
         }
 
+        public bool ReturnBorrow(int ssn, string isbn, int volumeNumber, string lendDate)
+        {
+            return borrowDAO.Update(
+                new BorrowBook
+                {
+                    LendDate = lendDate,
+                    Member = new Member { SSN = ssn },
+                    Volume = new Volume
+                    {
+                        VolumeNumber = volumeNumber,
+                        Title = new Title { ISBN = isbn }
+                    }
+                }
+            );
+        }
+
         public bool SaveBorrow(BorrowBook borrowBook)
         {
             return borrowDAO.Create(borrowBook);
