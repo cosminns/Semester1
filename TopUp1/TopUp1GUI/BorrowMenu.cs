@@ -32,5 +32,16 @@ namespace TopUp1GUI
                 borrowBookInfoPage.Show();
             }
         }
+
+        private void buttonCreateBorrow_Click(object sender, EventArgs e)
+        {
+            if ((textBoxMemberSSN.Text.Length > 1)&&(textBoxVolumeNumber.Text.Length > 1)&&(textBoxTitleISBN.Text.Length > 1)&&(textBoxLendDate.Text.Length > 1))
+            {
+                this.Hide();
+                var borrowBookInfoPage = new BorrowBooklnfo(textBoxMemberSSN.Text, textBoxTitleISBN.Text, textBoxVolumeNumber.Text, textBoxLendDate.Text);
+                borrowBookInfoPage.Closed += (s, args) => this.Show();
+                borrowBookInfoPage.Show();
+            }
+        }
     }
 }

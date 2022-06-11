@@ -46,6 +46,7 @@ namespace TopUp1.Controllers
         [Route("api/member/{ssn}")]
         public Member GetMemberById(int ssn)
         {
+            
             return memberFacade.GetMemberInfo(ssn);
         }
 

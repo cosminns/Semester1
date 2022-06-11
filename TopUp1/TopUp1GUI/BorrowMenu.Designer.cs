@@ -38,6 +38,13 @@
             this.labelLendDate = new System.Windows.Forms.Label();
             this.labelMemberSSN = new System.Windows.Forms.Label();
             this.textBoxMemberSSN = new System.Windows.Forms.TextBox();
+            this.buttonCreateBorrow = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxMemberSSNBorrow = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxTitleISBNBorrow = new System.Windows.Forms.TextBox();
+            this.textBoxVolumeNumberBorrow = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelGetBorrowBook
@@ -67,7 +74,7 @@
             // 
             // textBoxLendDate
             // 
-            this.textBoxLendDate.Location = new System.Drawing.Point(352, 134);
+            this.textBoxLendDate.Location = new System.Drawing.Point(462, 131);
             this.textBoxLendDate.Name = "textBoxLendDate";
             this.textBoxLendDate.Size = new System.Drawing.Size(100, 23);
             this.textBoxLendDate.TabIndex = 3;
@@ -101,7 +108,7 @@
             // labelLendDate
             // 
             this.labelLendDate.AutoSize = true;
-            this.labelLendDate.Location = new System.Drawing.Point(377, 113);
+            this.labelLendDate.Location = new System.Drawing.Point(481, 113);
             this.labelLendDate.Name = "labelLendDate";
             this.labelLendDate.Size = new System.Drawing.Size(60, 15);
             this.labelLendDate.TabIndex = 7;
@@ -110,7 +117,7 @@
             // labelMemberSSN
             // 
             this.labelMemberSSN.AutoSize = true;
-            this.labelMemberSSN.Location = new System.Drawing.Point(526, 113);
+            this.labelMemberSSN.Location = new System.Drawing.Point(349, 113);
             this.labelMemberSSN.Name = "labelMemberSSN";
             this.labelMemberSSN.Size = new System.Drawing.Size(76, 15);
             this.labelMemberSSN.TabIndex = 9;
@@ -118,16 +125,81 @@
             // 
             // textBoxMemberSSN
             // 
-            this.textBoxMemberSSN.Location = new System.Drawing.Point(514, 134);
+            this.textBoxMemberSSN.Location = new System.Drawing.Point(337, 131);
             this.textBoxMemberSSN.Name = "textBoxMemberSSN";
             this.textBoxMemberSSN.Size = new System.Drawing.Size(100, 23);
             this.textBoxMemberSSN.TabIndex = 8;
+            // 
+            // buttonCreateBorrow
+            // 
+            this.buttonCreateBorrow.Location = new System.Drawing.Point(388, 188);
+            this.buttonCreateBorrow.Name = "buttonCreateBorrow";
+            this.buttonCreateBorrow.Size = new System.Drawing.Size(113, 23);
+            this.buttonCreateBorrow.TabIndex = 10;
+            this.buttonCreateBorrow.Text = "Borrow Book";
+            this.buttonCreateBorrow.UseVisualStyleBackColor = true;
+            this.buttonCreateBorrow.Click += new System.EventHandler(this.buttonCreateBorrow_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(349, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 15);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Member SSN";
+            // 
+            // textBoxMemberSSNBorrow
+            // 
+            this.textBoxMemberSSNBorrow.Location = new System.Drawing.Point(337, 253);
+            this.textBoxMemberSSNBorrow.Name = "textBoxMemberSSNBorrow";
+            this.textBoxMemberSSNBorrow.Size = new System.Drawing.Size(100, 23);
+            this.textBoxMemberSSNBorrow.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(213, 235);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 15);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Volume Number";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(62, 235);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 15);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Title ISBN";
+            // 
+            // textBoxTitleISBNBorrow
+            // 
+            this.textBoxTitleISBNBorrow.Location = new System.Drawing.Point(46, 253);
+            this.textBoxTitleISBNBorrow.Name = "textBoxTitleISBNBorrow";
+            this.textBoxTitleISBNBorrow.Size = new System.Drawing.Size(100, 23);
+            this.textBoxTitleISBNBorrow.TabIndex = 12;
+            // 
+            // textBoxVolumeNumberBorrow
+            // 
+            this.textBoxVolumeNumberBorrow.Location = new System.Drawing.Point(207, 253);
+            this.textBoxVolumeNumberBorrow.Name = "textBoxVolumeNumberBorrow";
+            this.textBoxVolumeNumberBorrow.Size = new System.Drawing.Size(100, 23);
+            this.textBoxVolumeNumberBorrow.TabIndex = 11;
             // 
             // BorrowMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxMemberSSNBorrow);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxTitleISBNBorrow);
+            this.Controls.Add(this.textBoxVolumeNumberBorrow);
+            this.Controls.Add(this.buttonCreateBorrow);
             this.Controls.Add(this.labelMemberSSN);
             this.Controls.Add(this.textBoxMemberSSN);
             this.Controls.Add(this.labelLendDate);
@@ -157,5 +229,12 @@
         private Label labelLendDate;
         private Label labelMemberSSN;
         private TextBox textBoxMemberSSN;
+        private Button buttonCreateBorrow;
+        private Label label1;
+        private TextBox textBoxMemberSSNBorrow;
+        private Label label2;
+        private Label label3;
+        private TextBox textBoxTitleISBNBorrow;
+        private TextBox textBoxVolumeNumberBorrow;
     }
 }

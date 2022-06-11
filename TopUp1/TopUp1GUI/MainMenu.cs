@@ -48,5 +48,7 @@ namespace TopUp1GUI
             borrowMenu.Closed += (s, args) => this.Show();
             borrowMenu.Show();
         }
+
+        
     }
 }

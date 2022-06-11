@@ -6,6 +6,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RestSharp;
+using TopUp1.Model;
+
 namespace TopUp1GUI.Caller
 {
     public class RestSharpCaller
@@ -158,6 +160,12 @@ namespace TopUp1GUI.Caller
         {
             var request = new RestRequest("volume/"+titleISBN+"volumeNumber="+volumeNumber, Method.DELETE);
             var response = client.Execute<bool>(request);
+            return response.Data;
+        }
+        public BooleanResponse LogIn(string userName, string password)
+        {
+            var request = new RestRequest("login/?userName=" + userName+"&password="+password, Method.POST);
+            var response = client.Execute<BooleanResponse>(request);
             return response.Data;
         }
     }
