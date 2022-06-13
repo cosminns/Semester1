@@ -68,6 +68,7 @@
             // 
             // passwordTextField
             // 
+            this.passwordTextField.AccessibleName = "passwordTextField";
             this.passwordTextField.Location = new System.Drawing.Point(272, 181);
             this.passwordTextField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordTextField.Name = "passwordTextField";
@@ -77,6 +78,7 @@
             // 
             // userNameTextField
             // 
+            this.userNameTextField.AccessibleName = "userNameTextField";
             this.userNameTextField.Location = new System.Drawing.Point(272, 123);
             this.userNameTextField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userNameTextField.Name = "userNameTextField";

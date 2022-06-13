@@ -19,6 +19,12 @@ namespace TopUp1Test
         [Test]
         public void LoginTest() 
         {
+            var userNameText = appDriver.session.FindElementByAccessibilityId("userNameTextField");
+            userNameText.Clear();
+            userNameText.SendKeys("Adriana604");
+            var passwordText = appDriver.session.FindElementByAccessibilityId("passwordTextField");
+            passwordText.Clear();
+            passwordText.SendKeys("Password123");
             appDriver.session.FindElementByAccessibilityId("loginButton").Click();
             var memberMenuButton = appDriver.desktopSession.FindElementByAccessibilityId("memberMenuButton");
             Assert.That(memberMenuButton, Is.Not.Null);
