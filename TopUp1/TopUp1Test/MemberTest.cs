@@ -17,7 +17,7 @@ namespace TopUp1Test
         [SetUp]
         public void Setup()
         {
-            SetUpMember();
+            /*SetUpMember();
             Mock<IDAO<Member>> meberDAOMock = new Mock<IDAO<Member>>(MockBehavior.Loose);
             meberDAOMock.Setup<Member>
             (
@@ -27,7 +27,8 @@ namespace TopUp1Test
                 )
             )
             .Returns(existingMember);
-            memberDAO = meberDAOMock.Object;
+            memberDAO = meberDAOMock.Object;*/
+            memberDAO = new MemberDAO();
         }
 
         private void SetUpMember()

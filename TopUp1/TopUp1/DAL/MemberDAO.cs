@@ -56,64 +56,71 @@ namespace TopUp1.DAL
 
         public Member GetById(Member m)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                conn.Open();
-
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("prGetMemberInfo", conn);
-
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@MemberSSN", m.SSN));
-                SqlDataReader rdr;
-                // execute the command
-                rdr = cmd.ExecuteReader();
-                Member member = new Member();
-                while (rdr.Read())
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    member.SSN = (int)rdr["SSN"];
-                    member.Name = (string)rdr["Name"];
-                    member.HomeAddress = (string)rdr["HomeAddress"];
-                    member.BirthDate = ((DateTime)rdr["DoB"]).ToString("yyyy-MM-dd");
-                    member.CampusAddress = (string)rdr["CampusAddress"];
-                    member.JoinDate = ((DateTime)rdr["JoinDate"]).ToString("yyyy-MM-dd");
-                    member.IsProfessor = (bool)rdr["IsProfessor"];
+                    conn.Open();
+
+                    // 1.  create a command object identifying the stored procedure
+                    SqlCommand cmd = new SqlCommand("prGetMemberInfo", conn);
+
+                    // 2. set the command object so it knows to execute a stored procedure
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // 3. add parameter to command, which will be passed to the stored procedure
+                    cmd.Parameters.Add(new SqlParameter("@MemberSSN", m.SSN));
+                    SqlDataReader rdr;
+                    // execute the command
+                    rdr = cmd.ExecuteReader();
+                    Member member = new Member();
+                    while (rdr.Read())
+                    {
+                        member.SSN = (int)rdr["SSN"];
+                        member.Name = (string)rdr["Name"];
+                        member.HomeAddress = (string)rdr["HomeAddress"];
+                        member.BirthDate = ((DateTime)rdr["DoB"]).ToString("yyyy-MM-dd");
+                        member.CampusAddress = (string)rdr["CampusAddress"];
+                        member.JoinDate = ((DateTime)rdr["JoinDate"]).ToString("yyyy-MM-dd");
+                        member.IsProfessor = (bool)rdr["IsProfessor"];
+                    }
+                    rdr.Close();
+
+                    //create a command to get the phone numbers and add them to the member
+
+                    cmd = new SqlCommand("prGetPersonPhoneNumbers", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@SSN", m.SSN));
+                    rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        member.PhoneNumbers.Add((string)rdr["PhoneNumber"]);
+                    }
+                    rdr.Close();
+
+                    //create a command to get the card and add it to the member
+
+                    cmd = new SqlCommand("prGetMemberCard", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@SSN", m.SSN));
+                    rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        Card card = new Card();
+                        card.CardNumber = (int)rdr["CardNumber"];
+                        card.ExpiryDate = ((DateTime)rdr["ExpiryDate"]).ToString("yyyy-MM-dd");
+                        card.ExpiryDate = ((DateTime)rdr["ExpiryDate"]).ToString("yyyy-MM-dd");
+                        card.Photo = (string)rdr["Photo"];
+                        member.Card = card;
+                    }
+                    rdr.Close();
+
+                    return member;
                 }
-                rdr.Close();
-
-                //create a command to get the phone numbers and add them to the member
-
-                cmd = new SqlCommand("prGetPersonPhoneNumbers", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@SSN", m.SSN));
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    member.PhoneNumbers.Add((string)rdr["PhoneNumber"]);
-                }
-                rdr.Close();
-
-                //create a command to get the card and add it to the member
-
-                cmd = new SqlCommand("prGetMemberCard", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@SSN", m.SSN));
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    Card card = new Card();
-                    card.CardNumber = (int)rdr["CardNumber"];
-                    card.ExpiryDate = ((DateTime)rdr["ExpiryDate"]).ToString("yyyy-MM-dd");
-                    card.ExpiryDate = ((DateTime)rdr["ExpiryDate"]).ToString("yyyy-MM-dd");
-                    card.Photo = (string)rdr["Photo"];
-                    member.Card = card;
-                }
-                rdr.Close();
-
-                return member;
+            }
+            catch 
+            {
+                return null;
             }
         }
 
